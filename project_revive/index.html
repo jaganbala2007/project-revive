@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROJECT REVIVE — EV Battery Circularity Intelligence Platform</title>
+  
+  <!-- Modern Clean Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Climate-Tech Design System -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app-container">
+    <!-- Left Navigation Rail -->
+    <aside class="sidebar">
+      <div class="brand-section">
+        <div class="brand-badge-container">
+          <div class="brand-logo-icon">R</div>
+          <div class="brand-title-wrap">
+            <span class="brand-title">REVIVE</span>
+            <span class="brand-sub">Circularity Engine</span>
+          </div>
+        </div>
+        <div class="proto-pill">
+          <span>●</span> RMK REVOLT DEMO
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <div style="font-size: 10.5px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 700; padding: 6px 14px 4px;">
+          Navigation
+        </div>
+
+        <a class="nav-item active" data-view="entry">
+          <span class="nav-icon">🏠</span>
+          <span>Product Entry</span>
+        </a>
+
+        <a class="nav-item" data-view="overview">
+          <span class="nav-icon">📊</span>
+          <span>Operations Fleet</span>
+          <span class="badge">Live</span>
+        </a>
+
+        <a class="nav-item" data-view="register">
+          <span class="nav-icon">➕</span>
+          <span>Register Battery</span>
+        </a>
+
+        <div style="font-size: 10.5px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 700; padding: 12px 14px 4px;">
+          Circularity Pipeline
+        </div>
+
+        <a class="nav-item" data-view="diagnostics">
+          <span class="nav-icon">⚡</span>
+          <span>Diagnostic Bench</span>
+        </a>
+
+        <a class="nav-item" data-view="routing">
+          <span class="nav-icon">🔀</span>
+          <span>Intelligent Routing</span>
+        </a>
+
+        <a class="nav-item" data-view="baas">
+          <span class="nav-icon">🔄</span>
+          <span>Battery-as-a-Service</span>
+        </a>
+
+        <a class="nav-item" data-view="ledger">
+          <span class="nav-icon">⛓️</span>
+          <span>Circularity Ledger</span>
+        </a>
+
+        <div style="font-size: 10.5px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 700; padding: 12px 14px 4px;">
+          Economics & Scale
+        </div>
+
+        <a class="nav-item" data-view="economics">
+          <span class="nav-icon">💰</span>
+          <span>Impact & Financials</span>
+        </a>
+
+        <a class="nav-item" data-view="pilot">
+          <span class="nav-icon">🚀</span>
+          <span>6-Month Pilot Plan</span>
+        </a>
+
+        <a class="nav-item" data-view="tests">
+          <span class="nav-icon">🧪</span>
+          <span>Automated Tests</span>
+        </a>
+      </nav>
+
+      <!-- Sidebar Demo Action Footer -->
+      <div class="sidebar-footer">
+        <button class="btn-demo-start" onclick="window.app.demoController.startGuidedDemo()">
+          <span>⭐</span> Start Guided Demo
+        </button>
+        <button class="btn-presentation" onclick="window.app.demoController.openPresentationMode()">
+          <span>🎙️</span> 2-Min Jury Cinema
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper">
+      <!-- Top Application Header -->
+      <header class="top-header">
+        <div class="header-left">
+          <div id="current-page-title" class="page-title">Operations & Fleet Overview</div>
+          <div class="header-meta">
+            <span>•</span>
+            <span id="header-platform-id" class="text-mono" style="font-size: 11px; color: var(--accent-lime);">PROJECT REVIVE v2.4</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <!-- Live SHA-256 Ledger Status Pill -->
+          <div class="ledger-status-pill" onclick="window.app.navigate('ledger')" style="cursor: pointer;" title="Click to view Cryptographic Ledger">
+            <span id="header-ledger-dot" class="status-dot"></span>
+            <span id="header-ledger-text" style="font-weight: 600;">Ledger Verified</span>
+          </div>
+
+          <!-- Quick Reset Action -->
+          <button class="quick-action-btn" onclick="window.app.resetAllData()" title="Restore deterministic factory seed data" style="font-size: 11.5px;">
+            ↺ Reset Demo
+          </button>
+
+          <!-- Quick Register Action -->
+          <button class="quick-action-btn primary" onclick="window.app.navigate('register')">
+            + Register Battery
+          </button>
+        </div>
+      </header>
+
+      <!-- Dynamic Guided Demo Banner (Toggled during guided walk) -->
+      <div id="guided-demo-banner" class="guided-demo-banner" style="display: none; margin: 20px 28px 0;"></div>
+
+      <!-- Main Dynamic Content Viewport -->
+      <main id="content-viewport" class="content-viewport"></main>
+    </div>
+  </div>
+
+  <!-- Load Core Modular Engines -->
+  <script src="js/crypto_ledger.js"></script>
+  <script src="js/diagnostics.js"></script>
+  <script src="js/routing.js"></script>
+  <script src="js/economics.js"></script>
+  <script src="js/seed_data.js"></script>
+  <script src="js/test_suite.js"></script>
+  <script src="js/demo_controller.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
